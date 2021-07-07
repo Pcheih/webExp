@@ -4,30 +4,39 @@
 <v-app id="withBg" >
      
     <v-card
-      class="mx-auto"
-      width="1000"
-      
+        img="../ssadsa"
+      class="mx-auto mt-10"
+      width="600"
+        
     >
      <carousel></carousel>
-      <!-- <v-img
-        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-        height="40%"
-      ></v-img> -->
+    
+     <v-card class="mt-10"
+              color="#385F73"
+              dark
+            >
+              <v-card-title class="text-h4">
+                下北沢 
+              </v-card-title>
+                The best fitness room in SZU</v-card-subtitle>
   
-      <v-card-title>
-        Top western road trips
-      </v-card-title>
+              <v-card-actions>
+                <v-btn text>
+                  Fit you Now
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+
+     
   
-      <v-card-subtitle>
-        1,000 miles of wonder
-      </v-card-subtitle>
-  
-      <v-card-actions>
+      <v-card-actions class="mt-5"  @click="show = !show">
         <v-btn
           color="orange lighten-2"
           text
+          
         >
-          Explore
+          Explore Fitness Wiki!
+          
         </v-btn>
   
         <v-spacer></v-spacer>
@@ -40,16 +49,16 @@
         </v-btn>
       </v-card-actions>
   
-      <v-expand-transition>
+      <v-expand-transition >
         <div v-show="show">
           <v-divider></v-divider>
-  
+          <kaluli></kaluli>
+<!--   
           <v-card-text>
             I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
-          </v-card-text>
+          </v-card-text> -->
         </div>
-      </v-expand-transition>
-       <kaluli></kaluli>
+      </v-expand-transition >
     </v-card>
    
   </v-app>
