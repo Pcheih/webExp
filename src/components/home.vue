@@ -6,9 +6,9 @@
         <v-hover class="mb-10">
           <template v-slot:default="{ hover }">
             <v-card class="mt-10" color="#385F73" dark>
-              <v-card-title class="text-h4"> 下北沢FitnessRoom </v-card-title>
+              <v-card-title class="text-h4"> SZU-FitnessRoom </v-card-title>
               <v-card-subtitle class="mt-2">
-                The best fitness room in SZU
+                The best fitness room in SZU(but also only)
               </v-card-subtitle>
 
               <v-card-actions>

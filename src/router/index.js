@@ -1,13 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import welcome from '@/components/welcome.vue'
-import preset from '@/components/preset.vue'
-import dynamicRouterTest from '@/components/dynamicRouterTest.vue'
+
 import home from '@/components/home.vue'
 import player from '@/components/player.vue'
 import admin from '@/components/admin.vue'
-import login from '@/components/login.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -18,6 +15,10 @@ export default new Router({
       path: '/',
       // name: 'preset',
       component: home
+    },
+    {
+      path:'/coach',
+      component:player
     },
     {
       path:'/player',

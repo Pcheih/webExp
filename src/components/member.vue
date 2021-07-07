@@ -1,92 +1,92 @@
 <template>
-  <v-app>
+  
     <v-container fluid>
-      <v-row justify="space-around">
+      <v-row justify="space-around" class="my-10">
         <v-btn @click="add" color="primary" elevation="4">ADD</v-btn>
         <v-btn @click="del" color="red" elevation="4">DELETE</v-btn>
       </v-row>
       <v-row justify="center">
-        <!--  <v-subheader>Good day</v-subheader> -->
-       
-          <v-expansion-panels popout v-for="index of ListNum" :key="index">
-            <v-expansion-panel
-              v-for="(message, i) in messages"
-              :key="i"
-              hide-actions
-            >
-              <v-expansion-panel-header>
-                <v-row align="center" class="spacer" no-gutters>
-                  <v-col cols="4" sm="2" md="1">
-                    <v-avatar size="36px">
-                      <img
-                        v-if="message.avatar"
-                        alt="Avatar"
-                        src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
-                      />
-                      <v-icon
-                        v-else
-                        :color="message.color"
-                        v-text="message.icon"
-                      ></v-icon>
-                    </v-avatar>
-                  </v-col>
+      
 
-                  <v-col class="hidden-xs-only" sm="5" md="3">
-                    <strong v-html="message.name"></strong>
-                    <span v-if="message.total" class="grey--text">
-                      &nbsp;({{ message.total }})
-                    </span>
-                  </v-col>
+        <v-expansion-panels
+          popout
+          v-for="index of ListNum"
+          :key="index"
+          class="my-2"
+        >
+          <v-expansion-panel
+            v-for="(message, i) in messages"
+            :key="i"
+            hide-actions
+          >
+            <v-expansion-panel-header>
+              <v-row align="center" class="spacer" no-gutters>
+                <v-col cols="3" sm="2">
+                  <v-avatar size="36px" class="mb-5 ">
+                    <img
+                      v-if="message.avatar"
+                      alt="Avatar"
+                      src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
+                    />
+                  </v-avatar>
+                </v-col>
 
-                  <v-col class="text-no-wrap" cols="5" sm="3">
-                    <v-chip
-                      v-if="message.new"
-                      :color="`${message.color} lighten-4`"
-                      class="ml-0 mr-2 black--text"
-                      label
-                      small
-                    >
-                      {{ message.new }} new
-                    </v-chip>
-                    <strong v-html="message.title"></strong>
-                  </v-col>
+                <v-col cols="5" sm="4">
+                  <v-text-field
+                    v-model="first"
+                    label="First Name"
+                    filled
+                  ></v-text-field>
+                </v-col>
 
-                  <v-col
-                    v-if="message.excerpt"
-                    class="grey--text text-truncate hidden-sm-and-down"
-                  >
-                    &mdash;
-                    {{ message.excerpt }}
-                  </v-col>
-                </v-row>
-              </v-expansion-panel-header>
+                <v-col cols="5" sm="4">
+                  <v-text-field
+                    v-model="last"
+                    label="Last Name"
+                    filled
+                  ></v-text-field>
+                </v-col>
+              </v-row>
+            </v-expansion-panel-header>
 
-              <v-expansion-panel-content>
-                <v-divider></v-divider>
-                <v-card-text v-text="lorem"></v-card-text>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
-        
+            <v-expansion-panel-content>
+              <v-divider></v-divider>
+              <v-textarea
+                clearable
+                clear-icon="mdi-close-circle"
+                label="Text"
+                :value="lorem"
+              ></v-textarea>
+              <!-- <v-card-text v-text="lorem"></v-card-text> -->
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
       </v-row>
+       <v-row class="mt-10" v-show="ListNum" justify="center">
+           <v-btn @click="back" color="secondary" elevation="4">
+               confirm
+           </v-btn>
+       </v-row>
     </v-container>
-  </v-app>
+  
 </template>
 
 <script>
 export default {
   methods: {
+      back(){
+          this.$router.push({path: '/'});
+      },
     add() {
-        if(this.ListNum>10){
-alert("you can only have ten members")
-return 
-        }
-       
+      if (this.ListNum > 10) {
+        alert("you can only have ten members");
+        return;
+      }
+
       this.ListNum++;
     },
     del() {
-        if(this.ListNum<=0)
-        return
+      if (this.ListNum <= 0) return;
       this.ListNum--;
     },
   },
@@ -96,7 +96,7 @@ return
       {
         avatar: "https://avatars0.githubusercontent.com/u/9064066?v=4&s=460",
         name: "John Leider",
-        title: "Welcome to 下北沢!",
+        title: "Welcome to SZU!",
         excerpt: "",
       },
     ],
