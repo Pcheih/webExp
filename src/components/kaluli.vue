@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-toolbar flat color="primary" dark>
+      <v-toolbar flat color="primary" >
         <v-toolbar-title>Sports-Calorie</v-toolbar-title>
       </v-toolbar>
     

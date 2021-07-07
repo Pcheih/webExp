@@ -22,8 +22,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+ 
   
 }
-
+#withBg {
+     padding-top:20px ;
+      padding-bottom:20px ;
+  background: url(assets/bg.jpg) no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;
+}
 </style>
